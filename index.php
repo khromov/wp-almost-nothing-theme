@@ -74,9 +74,6 @@
                     ?>
                 </div><!-- #content -->
             </div><!-- #primary -->
-
-            <!-- Sidebar here -->
-            <?php get_sidebar(); ?>
         </div>
         <?php wp_footer(); ?>
     </body>
