@@ -1,15 +1,39 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width">
         <title><?php wp_title( '|', true, 'right' ); ?></title>
-        <link rel="profile" href="http://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
+        <section>
+            <!-- FIXME: Probably don't hard-code height / width, css instead... -->
+            <header style="<?php echo (get_header_image()) ? "background: url('" . esc_url( get_header_image() ) . "'); width: " . get_custom_header()->width . "px; height: " . get_custom_header()->height ."px;" : ''?>">
+                <?php if(is_home()): ?>
+                    <!-- Get gravatar -->
+                <?php endif; ?>
+                <h1>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                        <?php bloginfo( 'name' ); ?>
+                    </a>
+                </h1>
+                <h2>
+                    <?php bloginfo('description'); ?>
+                </h2>
+            </header>
+            <!-- Primary navigation -->
+            <nav>
+
+            </nav>
+        </section>
+        <section>
+            <footer>
+                Hello!
+            </footer>
+        </section>
         <div class="container">
             <div class="title-header">
                 <h1><?=get_bloginfo('name')?></h1>
